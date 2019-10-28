@@ -9,7 +9,7 @@ export default class AppHeader extends Component {
 
     render() {
         return <header className="app-header">
-
+            <span>TaskManager</span>
         </header>
     }
 }
