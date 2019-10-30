@@ -4,12 +4,15 @@
     background: dodgerblue;
     box-shadow: 0px 2px 5px rgba(0,0,0,.2);
     display: table;
+    padding: 10px 15px;
 
-    > span {
-        display: inline-block;
+    > section {
+        display: table-cell;
         vertical-align: middle;
-        color: #FFF;
-        font-family: 'Courier New', Courier, monospace;
-        font-weight: bold
+
+        > * {
+            color: #FFF;
+            font-weight: 300
+        }
     }
 }

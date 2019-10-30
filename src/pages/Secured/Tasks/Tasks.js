@@ -1,14 +1,14 @@
 import React from 'react';
 import { Component } from 'react';
-import './AppContent.scss';
+import './Tasks.scss';
 
-import TaskItem from '../TaskItem/Tasktem';
+import TaskItem from './../../../components/Secured/TaskItem/TaskItem'
 
-export default class AppContent extends Component {
+export default class Tasks extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            task: 'Teste',
+            task: '',
             tasks: []
         };
     }
@@ -41,10 +41,11 @@ export default class AppContent extends Component {
                         name="task"
                         type="text"
                         autoComplete="off"
+                        placeholder="Nome da tarefa"
                         value={this.state.task}
                         onChange={this.onTaskChange}
                     />
-                    <button type="submit">OK</button>
+                    <button type="submit">ADD</button>
                 </form>
             </div>
             <div className="task-list-container">
