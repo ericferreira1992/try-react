@@ -2,9 +2,11 @@ import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import AuthService from './services/auth-service';
 
+// BASE COMPONENTS
 import AppHeader from './components/Secured/AppHeader/AppHeader'
 import AppContent from './components/Secured/AppContent/AppContent'
 
+// PAGES
 import NotFound from './pages/NotFound/NotFound';
 import Login from './pages/Public/Login/Login.js'
 import Tasks from './pages/Secured/Tasks/Tasks'

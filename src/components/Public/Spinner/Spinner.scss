@@ -1,0 +1,23 @@
+.loading-spinner {
+    > svg:first-child {
+        fill: transparent;
+        stroke: rgb(100, 101, 105);
+        stroke-width: 10;
+        animation: spinner-dash 1.7s ease infinite, spinner-rotate 1.7s linear infinite;
+        position: fixed;
+        top: calc(50% - 110px);
+        left: calc(50% - 110px);
+        z-index: 9999;
+    }
+
+    @keyframes spinner-dash {
+        0% { stroke-dasharray: 1,348; stroke-dashoffset: 0; }
+        50% { stroke-dasharray: 312,348; stroke-dashoffset: -92; }
+        100% { stroke-dasharray: 312,348; stroke-dashoffset: -341; }
+    }
+    
+    @keyframes spinner-rotate {
+        0% {transform: rotate(0deg); }
+        100% {transform: rotate(360deg); }
+    }
+}
