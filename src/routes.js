@@ -5,7 +5,7 @@ import AuthService from './services/auth-service';
 import AppHeader from './components/Secured/AppHeader/AppHeader'
 import AppContent from './components/Secured/AppContent/AppContent'
 
-import NotFound from './components/NotFound/NotFound';
+import NotFound from './pages/NotFound/NotFound';
 import Login from './pages/Public/Login/Login.js'
 import Tasks from './pages/Secured/Tasks/Tasks'
 
@@ -33,10 +33,10 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
     <Route {...rest}
         render={ (props) =>
             AuthService.logged 
-                ? [
-                    <AppHeader key="header" />,
-                    <AppContent children={<Component {...props} key="current-page" />}/>
-                ]
+                ? <div className="animated fadeIn">
+                    <AppHeader />
+                    <AppContent children={<Component {...props} />}/>
+                </div>
                 : <Redirect to={{ pathname: "/", state: { from: props.location } }} />
         }
     />

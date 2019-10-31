@@ -34,10 +34,10 @@ export default class Tasks extends Component {
     }
 
     render() {
-        return <div className="app-content">
+        return <div className="tasks-page animated fadeIn">
             <div className="add-msg-container">
                 <form onSubmit={this.onSubmit}>
-                    <input
+                    <input className="form-control"
                         name="task"
                         type="text"
                         autoComplete="off"
@@ -45,7 +45,9 @@ export default class Tasks extends Component {
                         value={this.state.task}
                         onChange={this.onTaskChange}
                     />
-                    <button type="submit">ADD</button>
+                    <button type="submit">
+                        <i className="material-icons">add</i>
+                    </button>
                 </form>
             </div>
             <div className="task-list-container">

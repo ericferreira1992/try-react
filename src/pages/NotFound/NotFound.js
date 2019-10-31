@@ -8,7 +8,7 @@ export default class NotFound extends Component {
     }
 
     render() {
-        return <div>
+        return <div className="animated fadeIn">
             404
         </div>
     }

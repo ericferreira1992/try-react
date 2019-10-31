@@ -1,36 +1,5 @@
 .app-content {
     width: 100%;
     height: calc(100vh - 55px);
-}
-
-.add-msg-container {
-    padding: 20px;
-    width: 100%;
-
-    input {
-        font-size: 14px;
-        padding: 10px 20px;
-        width: calc(100% - 100px);
-        margin-right: 20px;
-        border-radius: 5px;
-        border: 0;
-        height: 40px;
-        box-shadow: 0 1px 3px rgba(0,0,0,.1),  0 1px 6px rgba(0,0,0,.2);
-        outline: 0;
-    }
-
-    button {
-        cursor: pointer;
-        font-size: 13px;
-        width: 80px;
-        border-radius: 5px;
-        border: 0;
-        height: 40px;
-        box-shadow: 0 1px 3px rgba(0,0,0,.1),  0 1px 6px rgba(0,0,0,.2);
-        outline: 0;
-    }
-}
-
-.task-list-container {
-    
+    overflow: auto;
 }

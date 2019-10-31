@@ -1,4 +1,37 @@
-.tasks- {
-    display: table;
-    width: 100%;
+.tasks-page {
+    padding: 20px;
+    
+    .add-msg-container {
+        width: 100%;
+        display: table;
+    
+        input {
+            float: left;
+            font-size: 14px;
+            padding: 10px 20px;
+            width: calc(100% - 60px);
+            margin-right: 20px;
+            border-radius: 5px;
+            border: 0;
+            height: 40px;
+            box-shadow: 0 1px 3px rgba(0,0,0,.1),  0 1px 6px rgba(0,0,0,.2);
+            outline: 0;
+        }
+    
+        button {
+            float: left;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,.1),  0 1px 6px rgba(0,0,0,.2);
+            outline: 0;
+            color: #888;
+        }
+    }
+    
+    .task-list-container {
+        
+    }
 }

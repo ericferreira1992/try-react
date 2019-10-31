@@ -11,7 +11,7 @@ export default class TaskItem extends Component {
     }
 
     render() {
-        return <div>
+        return <div className="task-item">
             {this.state.task.name}
         </div>
     }

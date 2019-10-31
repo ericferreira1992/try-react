@@ -8,7 +8,7 @@ export default class AppContent extends Component {
     }
 
     render() {
-        return <div className="app-content">
+        return <div className="app-content animated fadeIn">
             {this.props.children}
         </div>
     }

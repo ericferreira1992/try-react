@@ -7,10 +7,11 @@ export default class AuthService {
     static login(user, pass) {
         return new Promise((resolver, reject) => {
             setTimeout(() => {
-                resolver({
+                this.user = {
                     user: user,
                     name: 'Eric Ferreira'
-                });
+                };
+                resolver(true);
             }, 1000);
         });
     }
