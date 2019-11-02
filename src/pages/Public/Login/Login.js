@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import './Login.scss';
 
 import AuthService from '../../../services/auth-service';
+import Spinner from '../../../components/Public/Spinner/Spinner';
 
 export default class Login extends Component {
 
@@ -69,13 +70,18 @@ export default class Login extends Component {
 
     render() {
         if (!AuthService.logged) {
-                return  <div className="login-page animated fadeIn">
-                    { (this.state.loading)
-                        ? <div>Loading...</div>
-                        : <form onSubmit={this.onSubmit}> 
+                return  <div className="login-page">
+                    { ( this.state.loading)
+                        ? <Spinner/>
+                        : <form onSubmit={this.onSubmit} className="animated fadeIn"> 
                             <h3>
-                                Task<br/>
-                                <span>Manager</span>
+                                <div>
+                                    <i className="material-icons">assignment_turned_in</i>
+                                </div>
+                                <div>
+                                    Task<br/>
+                                    <span>Manager</span>
+                                </div>
                             </h3>
                             <section>
                                 <div className="form-group">

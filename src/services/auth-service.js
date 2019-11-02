@@ -12,7 +12,7 @@ export default class AuthService {
                     name: 'Eric Ferreira'
                 };
                 resolver(true);
-            }, 1000);
+            }, 2000);
         });
     }
 
