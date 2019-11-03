@@ -11,7 +11,8 @@ export default class AppHeader extends Component {
 
     render() {
         return <header className="app-header">
-            <section>
+            <section className="app-header-logo">
+                <i className="material-icons">assignment_turned_in</i>
                 <span>TaskManager</span>
             </section>
             <section className="app-header-opts">

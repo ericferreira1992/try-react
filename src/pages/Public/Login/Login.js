@@ -70,44 +70,46 @@ export default class Login extends Component {
 
     render() {
         if (!AuthService.logged) {
-                return  <div className="login-page">
+                return  <div className="login-page animated fadeIn">
                     { ( this.state.loading)
                         ? <Spinner/>
-                        : <form onSubmit={this.onSubmit} className="animated fadeIn"> 
-                            <h3>
-                                <div>
-                                    <i className="material-icons">assignment_turned_in</i>
-                                </div>
-                                <div>
-                                    Task<br/>
-                                    <span>Manager</span>
-                                </div>
-                            </h3>
-                            <section>
-                                <div className="form-group">
-                                    <label>Usuário</label>
-                                    <input  className="form-control"
-                                        placeholder="Informe seu usuário"
-                                        onChange={this.onUserChange}
-                                        value={this.state.user}
-                                        type="text"
-                                    />
-                                </div>
-                                <div className="form-group">
-                                    <label>Senha</label>
-                                    <input  className="form-control"
-                                        placeholder="Informe sua senha"
-                                        onChange={this.onPassChange}
-                                        value={this.state.pass}
-                                        type="password"
-                                    />
-                                </div>
-                
-                                <button className="login-button">
-                                    Entrar
-                                </button>
-                            </section>
-                        </form> }
+                        : <div className="animated fadeIn"> 
+                            <form onSubmit={this.onSubmit} className="animated slideInDown"> 
+                                <h3>
+                                    <div>
+                                        <i className="material-icons">assignment_turned_in</i>
+                                    </div>
+                                    <div>
+                                        Task<br/>
+                                        <span>Manager</span>
+                                    </div>
+                                </h3>
+                                <section>
+                                    <div className="form-group">
+                                        <label>Usuário</label>
+                                        <input  className="form-control"
+                                            placeholder="Informe seu usuário"
+                                            onChange={this.onUserChange}
+                                            value={this.state.user}
+                                            type="text"
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label>Senha</label>
+                                        <input  className="form-control"
+                                            placeholder="Informe sua senha"
+                                            onChange={this.onPassChange}
+                                            value={this.state.pass}
+                                            type="password"
+                                        />
+                                    </div>
+                    
+                                    <button className="login-button">
+                                        Entrar
+                                    </button>
+                                </section>
+                            </form>
+                        </div>}
                 </div>;
         }
         return <Redirect to={{ pathname: "/tasks", state: { from: this.props.location } }} />

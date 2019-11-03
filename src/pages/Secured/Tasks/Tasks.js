@@ -3,17 +3,24 @@ import { Component } from 'react';
 import './Tasks.scss';
 
 import TaskItem from './../../../components/Secured/TaskItem/TaskItem'
+import TasksService from '../../../services/tasks-service';
+import Helper from '../../../services/helper-service';
 
 export default class Tasks extends Component {
+    renderFirstTime = true;
+
     constructor(props) {
         super(props);
         this.state = {
-            task: '',
-            tasks: []
+            task: ''
         };
     }
+    
+    componentDidMount() {
+        this.renderFirstTime = false;
+    }
 
-    onTaskChange = (e) => {
+    onTaskInputChange = (e) => {
         this.setState({
             task: e.target.value,
             tasks: this.state.tasks
@@ -23,14 +30,22 @@ export default class Tasks extends Component {
     onSubmit = (e) => {
         e.preventDefault();
         if (this.state.task.length > 0) {
-            this.setState({
-                task: '',
-                tasks: [
-                    ...this.state.tasks,
-                    { id: this.state.tasks.length + 1, name: this.state.task }
-                ]
-            })
+            TasksService.add({
+                name: this.state.task,
+                createDate: Helper.dateFormat(new Date())
+            });
+            this.setState({ task: '' })
         }
+    }
+
+    onRemovedTask = () => {
+        this.setState({
+            task: this.state.task,
+        })
+    }
+
+    taskNameIsValid = () => {
+        return this.state.task && this.state.task.length >= 4;
     }
 
     render() {
@@ -43,17 +58,23 @@ export default class Tasks extends Component {
                         autoComplete="off"
                         placeholder="Nome da tarefa"
                         value={this.state.task}
-                        onChange={this.onTaskChange}
+                        onChange={this.onTaskInputChange}
                     />
-                    <button type="submit">
+                    <button type="submit" disabled={!this.taskNameIsValid()}>
                         <i className="material-icons">add</i>
                     </button>
                 </form>
             </div>
             <div className="task-list-container">
                 {
-                    this.state.tasks.map((task) => {
-                        return <TaskItem key={task.id} task={task} />;
+                    TasksService.tasks.map((task, i) => {
+                        return <TaskItem
+                            key={task.id}
+                            pos={i}
+                            task={task}
+                            update={this.onRemovedTask} 
+                            renderFirstTime={this.renderFirstTime}
+                        />;
                     })
                 }
             </div>

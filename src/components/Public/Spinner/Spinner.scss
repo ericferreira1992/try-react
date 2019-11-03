@@ -7,16 +7,12 @@
         stroke: #FFF;
         stroke-width: 5;
         animation: spinner-dash 1.7s ease infinite, spinner-rotate 1.7s linear infinite;
-        position: fixed;
-        top: calc(50% - 50px);
-        left: calc(50% - 50px);
-        z-index: 9999;
     }
 
     @keyframes spinner-dash {
-        0% { stroke-dasharray: 1,348; stroke-dashoffset: 0; }
-        50% { stroke-dasharray: 312,348; stroke-dashoffset: -92; }
-        100% { stroke-dasharray: 312,348; stroke-dashoffset: -341; }
+        0% { stroke-dasharray: 1,158; stroke-dashoffset: 0; }
+        50% { stroke-dasharray: 142,158; stroke-dashoffset: -42; }
+        100% { stroke-dasharray: 142,158; stroke-dashoffset: -155; }
     }
     
     @keyframes spinner-rotate {

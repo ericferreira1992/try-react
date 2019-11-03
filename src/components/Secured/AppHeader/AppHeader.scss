@@ -17,6 +17,19 @@
             font-weight: 300
         }
 
+        &.app-header-logo {
+            width: 150px;
+
+            > * {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            > i {
+                margin-right: 6px;
+            }
+        }
+
         &.app-header-opts{
             text-align: right;
 

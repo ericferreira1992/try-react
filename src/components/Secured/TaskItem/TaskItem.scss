@@ -1,4 +1,91 @@
+@import 'src/styles/variables.scss';
+
 .task-item {
-    display: table;
-    width: 100%;
+    color: #666;
+    transition-duration: 300ms;
+
+    > section {
+        display: table;
+        width: 100%;
+        height: 50px;
+        padding: 10px 20px;
+
+        > div {
+            display: table-cell;
+            vertical-align: middle;
+    
+            > button {
+                outline: 0;
+                cursor: pointer;
+                border: none;
+                background-color: transparent;
+                padding: 5px 6px;
+                border-radius: 50%;
+                transition-duration: 300ms;
+    
+                > i {
+                    font-size: 30px;
+                }
+    
+                &:hover {
+                    background-color: rgba(#000, .03);
+                }
+            }
+    
+            &.check-cell {
+                width: 35px;
+    
+                > button {
+                    color: #999;
+    
+                    &.checked {
+                        color: $primaryColor;
+                    }
+                }
+            }
+    
+            &.content-cell {
+                padding: 0 10px;
+                font-weight: 300;
+            }
+    
+            &.options-cell {
+                width: 35px;
+    
+                > button {
+                    color: $dangerColor;
+    
+                    > i {
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
+
+    &.done {
+        :not(:hover){
+            background-color: #FAFAFA;
+            opacity: .7;
+        }
+
+        > section {
+            .content-cell {
+                text-decoration: line-through;
+            }
+        }
+    }
+
+    &:hover {
+        position: relative;
+        z-index: 1;
+        background-color: #FFF;
+        box-shadow: 0 0 5px rgba(#000, .05), 0 0 15px rgba(#000, .1);
+        border-top-color: transparent !important;
+        opacity: 1;
+
+        & + .task-item {
+            border-top-color: transparent !important;
+        }
+    }
 }
