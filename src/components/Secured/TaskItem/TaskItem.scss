@@ -24,7 +24,10 @@
                 transition-duration: 300ms;
     
                 > i {
+                    display: block;
+                    transition-duration: 300ms;
                     font-size: 30px;
+                    width: 30px;
                 }
     
                 &:hover {
@@ -54,6 +57,7 @@
     
                 > button {
                     color: $dangerColor;
+                    padding: 5px 3px;
     
                     > i {
                         font-size: 25px;
@@ -64,14 +68,18 @@
     }
 
     &.done {
-        :not(:hover){
-            background-color: #FAFAFA;
-            opacity: .7;
-        }
+        background-color: #FAFAFA;
+        opacity: .7;
 
         > section {
             .content-cell {
                 text-decoration: line-through;
+            }
+    
+            .check-cell {
+                > button {
+                    color: $primaryColor;
+                }
             }
         }
     }

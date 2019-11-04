@@ -31,6 +31,8 @@ export default class TasksService {
                 return 0;
             });
         }
+
+        return task;
     }
 
     static remove(task) {

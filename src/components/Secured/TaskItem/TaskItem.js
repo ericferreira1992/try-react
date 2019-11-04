@@ -28,7 +28,7 @@ export default class TaskItem extends Component {
             this.setState(() => {
                 setTimeout(() => {
                     TasksService.remove(this.state.task);
-                    this.props.update();
+                    this.props.update(this.state.task);
                 }, 300);
                 return {
                     ...this.state,
@@ -40,13 +40,13 @@ export default class TaskItem extends Component {
 
     customStyleAnimation = () => {
         return {    
-            animationDelay: (this.props.renderFirstTime ? ((this.props.pos - 1) * 150) : 0) + 'ms',
-            animationDuration: (this.props.renderFirstTime ? 500 : 300) + 'ms',
+            animationDelay: (this.props.addedEffect ? 0 : ((this.props.pos - 1) * 150)) + 'ms',
+            animationDuration: (this.props.addedEffect ? 300 : 500) + 'ms',
         };
     }
 
     getDefaultEnterAnimationName = () => {
-        return this.props.renderFirstTime ? 'flipInX': 'slideInLeft';
+        return this.props.addedEffect ? 'slideInLeft': 'zoomIn';
     }
 
     render() {
@@ -56,9 +56,9 @@ export default class TaskItem extends Component {
         >
             <section className={'animated ' + (this.state.removing ? 'fadeOut' : 'fadeIn')} style={this.customStyleAnimation()}>
                 <div className="check-cell">
-                    <button type="button" onClick={this.toggle} className={ this.state.task.done ? 'checked' : '' }>
+                    <button type="button" onClick={this.toggle}>
                         <i className="material-icons">
-                            { this.state.task.done ? 'check_circle' : 'radio_button_unchecked' }
+                            { this.state.task.done ? 'check_box' : 'check_box_outline_blank' }
                         </i>
                     </button>
                 </div>

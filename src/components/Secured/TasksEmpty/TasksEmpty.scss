@@ -1,0 +1,15 @@
+.tasks-empty {
+    color: #BBB;
+    text-align: center;
+    padding-top: 40px;
+    font-size: 23px;
+    font-weight: 300;
+    line-height: 1;
+
+    > i {
+        opacity: .6;
+        display: block;
+        font-size: 100px;
+        padding-bottom: 15px;
+    }
+}

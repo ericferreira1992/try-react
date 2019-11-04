@@ -1,0 +1,43 @@
+@import 'src/styles/variables.scss';
+
+.not-found-page {
+    color: #BBB;
+    text-align: center;
+    padding-top: 80px;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1;
+
+    > p {
+        font-size: 23px;
+        font-weight: 400;
+        margin: 0;
+    }
+
+    > i {
+        color: $primaryColor;
+        opacity: .6;
+        display: block;
+        font-size: 100px;
+        font-style: normal;
+        font-weight: bold;
+        padding-bottom: 0px;
+    }
+
+    .not-found-back {
+        padding-top: 15px;
+        
+        > a {
+            color: #999;
+
+            > i {
+                font-size: 25px;
+                width: 25px;
+            }
+    
+            &:hover {
+                color: $primaryColor;
+            }
+        }
+    }
+}
